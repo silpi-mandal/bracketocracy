@@ -7,8 +7,10 @@ const seasonroute = require("./routes/seasonRoute");
 const roundRoute = require("./routes/roundsRoute");
 const teamRoute = require("./routes/teamroute");
 const notificationRoute = require("./routes/notificationRoute");
-const leagueRoute = require('./routes/leagueroutes');
-const invitationroute =require("./routes/invitationRoutes");
+const leagueRoute = require("./routes/leagueroutes");
+const invitationroute = require("./routes/invitationRoutes");
+const MatchRoute = require("./routes/matchRoute");
+const zoneRoute = require("./routes/zoneRoute");
 const PORT = 6010;
 const app = express();
 
@@ -22,13 +24,15 @@ app.get("/", (req, res) => {
 });
 
 app.use("/role", roleroute);
+app.use("/zone", zoneRoute);
 app.use("/user", userroute);
 app.use("/season", seasonroute);
 app.use("/round", roundRoute);
 app.use("/team", teamRoute);
-app.use("/notification", notificationRoute );
-app.use("/league",leagueRoute);
-app.use("/invitation",invitationroute);
+app.use("/notification", notificationRoute);
+app.use("/league", leagueRoute);
+app.use("/invitation", invitationroute);
+app.use("/match", MatchRoute);
 app.listen(PORT, () => {
   console.log(`server has started at ${PORT}`);
 });

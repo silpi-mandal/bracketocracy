@@ -12,6 +12,8 @@ const userSchema = mongoose.Schema({
   status: {
     type: Number,
     required: true,
+    enum: [0, 1, 2, 3, 4], // Valid statuses
+    default: 0, // Default value
   },
   seasonId: {
     type: mongoose.Types.ObjectId,
@@ -30,4 +32,3 @@ const userSchema = mongoose.Schema({
 const userModel = mongoose.model("teams", userSchema);
 
 module.exports = userModel;
-console.log("user model is ready to use");

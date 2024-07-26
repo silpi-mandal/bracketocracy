@@ -1,5 +1,7 @@
 // zones.js schema
-const Zone = require("../models/zones");
+const Zone = require("../model/zones");
+
+const slugify = require("slugify");
 
 class userZone {
   static addzone = async (req, res) => {
