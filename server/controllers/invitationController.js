@@ -25,17 +25,17 @@ class InvitationController {
     //         // Save the invitation
     //         const savedInvitation = await invitation.save();
 
-    //         // Update the league with the invited user
-    //         const league = await League.findById(leagueId);
-    //         if (!league) {
-    //             return res.status(404).json({ message: 'League not found.' });
-    //         }
+            // // Update the league with the invited user
+            // const league = await League.findById(leagueId);
+            // if (!league) {
+            //     return res.status(404).json({ message: 'League not found.' });
+            // }
 
-    //         // Add the userId to league's userId array
-    //         league.userId.push(user.id);
+            // // Add the userId to league's userId array
+            // league.userId.push(user.id);
 
-    //         // Save the league
-    //         await league.save();
+            // // Save the league
+            // await league.save();
 
     //         res.status(200).json({
     //             message: 'Invitation added successfully.',
@@ -63,12 +63,14 @@ try{
         // status: 0 // Pending invitation
       });
   const  result=   await invitation.save();
-      res.status(200).json({message:"sucessfully invitation done",info:result});
+res.status(200).json({message:"sucessfully invitation done",info:result});
+
     
     
 
 }catch(err)
-{
+{ 
+    console.log(err);
     res.status(500).json({message:err.message});
 }
 
@@ -85,6 +87,15 @@ static showall = async(req,res)=>{
         res.status(404).json({message:err.message});
     }
 }
+static searchleague = async (req, res) => {
+    try {
+      let leagueid = req.params.id;
+      const result = await League.findById(leagueid);
+      res.status(200).json({ data: result });
+    } catch (err) {
+      res.status(404).json({ error: err.message });
+    }
+  };
 
 
 static deleteinvite = async(req,res)=>

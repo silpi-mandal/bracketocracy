@@ -6,8 +6,8 @@ const messageSchema = mongoose.Schema({
     ref: "leagues",
   },
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "users",
+    type: mongoose.Schema.Types.ObjectId,  // users id present in the league
+    ref: "leagues",
   },
   message: {
     type: String,
