@@ -5,6 +5,8 @@ import SignIn from "../components/screen/SignIn";
 import SignUp from "../components/screen/SignUp"
 import { SafeAreaView, StyleSheet } from 'react-native';
 import Bracket from '../components/screen/the bracket/Index' 
+import Home from "../components/screen/home/Home";
+import Notification from '../components/screen/Notification'
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +27,9 @@ export default function Index() {
           />
         </Stack.Navigator>
       </NavigationContainer> */}
-      <Bracket/>
+      {/* <Bracket/> */}
+      {/* <Home/> */}
+     <Notification/>
     </SafeAreaView>
   );
 }
