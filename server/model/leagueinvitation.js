@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const leagueinvitation = new mongoose.Schema({
+const leagueinvitation = mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -22,7 +22,7 @@ const leagueinvitation = new mongoose.Schema({
   },
   status: {
     type: Number,
-    required: true
+    default: true
   },
   created: {
      type: Date, 

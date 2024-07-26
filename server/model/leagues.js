@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-// const users =require("../model/userSchema");
+ 
 
-const leagueSchema = new mongoose.Schema({
+const leagueSchema =  mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -33,6 +33,6 @@ const leagueSchema = new mongoose.Schema({
   },
 });
 
-const League = mongoose.model("leagues", leagueSchema);
+const model = mongoose.model("leagues", leagueSchema);
 
-module.exports = League;
+module.exports = model;
